@@ -28,7 +28,7 @@ export class Game {
   /**
    * Dev hack that shows the bombs
    */
-  private readonly cheat = true;
+  private readonly cheat = false;
 
   /**
    * The game state can be divided into four parts:
