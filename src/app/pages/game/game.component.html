@@ -1,0 +1,34 @@
+<div class="game-component" *ngIf="gameData$ | async as data">
+
+  <h1><a routerLink="/help">Minesweeper</a></h1>
+
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="params">
+      <label> Rows </label>
+      <input id="rows" type="number" formControlName="rows">
+
+      <label> Columns </label>
+      <input id="columns" type="number" formControlName="columns">
+
+      <label>Bombs </label>
+      <input id="bombs" type="number" formControlName="bombs">
+    </div>
+
+    <div class="error" *ngIf="form.controls.rows.errors">Rows must be > 0</div>
+    <div class="error" *ngIf="form.controls.columns.errors">Columns must be > 0</div>
+
+    <input type="submit" value="New game" [disabled]="!form.valid">
+
+  </form>
+
+  <p>boms={{data.bombs}}, to open = {{data.toOpen}}, status = {{data.status}}</p>
+
+  <app-gameboard #gameboard [data]="data.cells" (open)="onOpenCell($event)" (flag)="onFlagCell($event)">
+  </app-gameboard>
+
+  <div *ngIf="timer$ | async as timer">
+    {{ timer | mmss_d }}
+  </div>
+
+</div>

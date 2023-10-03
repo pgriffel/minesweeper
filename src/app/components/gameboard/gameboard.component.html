@@ -1,0 +1,29 @@
+
+<div *ngIf="data;else no_game" class="game-board-component">
+
+    <!-- The game board is a grid of buttons -->
+    <table [hidden]="showingVideo">
+        <tr *ngFor="let row of data">
+            <td *ngFor="let cell of row">
+
+                <!-- The button's appearance is mostly determined by the dynamic class names -->
+                <button [ngClass]="cellClass(cell)" class="cell" (click)="clickCell($event, cell.row, cell.column)">
+                    {{cell.label}}
+                </button>
+            </td>
+        </tr>
+    </table>
+
+    <video #vid [hidden]="!showingVideo">
+        <source src="assets/explosion.mp4" type="video/mp4">
+    </video>
+
+    <audio #audio>
+        <source src="assets/hq-explosion-6288.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<ng-template #no_game>
+    No game to display
+</ng-template>

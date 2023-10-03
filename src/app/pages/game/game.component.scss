@@ -1,0 +1,23 @@
+.game-component {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        color: blue;
+    }
+
+    .params {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        margin: 1pt 0pt 8pt 0pt;
+    }
+
+    .error {
+        color: red;
+    }
+}

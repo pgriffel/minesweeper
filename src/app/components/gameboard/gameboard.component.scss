@@ -1,0 +1,67 @@
+.game-board-component {
+  
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 0pt;
+      border: solid 0.2pt gray;      
+    }
+
+    button {
+      padding: 0pt ;
+      margin: 0pt;  
+    }
+
+    .cell {
+      display: block;
+      min-width: 30px;
+      min-height: 30px;
+      border: 0;
+    }
+
+    .open {
+      pointer-events: none;
+      background: #EEE;
+    }
+
+    .closed {
+      background: lightgray;
+    }
+
+    .closed:hover {
+      background: silver
+    }
+
+    .flagged {
+      color: lightcoral;
+      font-size: 1.5em;
+    }
+
+    .one {
+      color: blue;
+    }
+
+    .two {
+      color: green;
+    }
+
+    .three {
+      color: red;
+    }
+
+    .four {
+      color: brown;
+    }
+
+    .five {
+      color: black;
+    }
+  
+    video {
+      width: 200px;
+      position: absolute;
+    }
+  }
+  
